@@ -3,10 +3,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import path from "path";
 import { promises as fs } from "fs";
 
-type Data = {
-  name: string;
-};
-
 export const getTotalUsers = (data = []) => {
   const users = data.map((u) => u["user_id"]);
   return new Set(users).size;

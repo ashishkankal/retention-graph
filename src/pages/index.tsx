@@ -2,8 +2,7 @@ import { Inter } from "next/font/google";
 import StatCard from "@/components/StatCard";
 import Chart from "@/components/Chart";
 import { MonthlyActiveUsers } from "@/components/MonthlyActiveUsers";
-import { Flame, Play, Users2Icon } from "lucide-react";
-import { GetServerSideProps } from "next";
+import { Flame, Play, Users2Icon } from "lucide-react/";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ data = {} }: any) {
@@ -39,7 +38,7 @@ export default function Home({ data = {} }: any) {
 
 export const getServerSideProps = async () => {
   const BASE_URL =
-    process.env.NODE_ENV !== "production" ? "http://localhost:3000" : "";
+    process.env.NODE_ENV === "production" ? "http://localhost:3000" : "";
   const resp = await fetch(`${BASE_URL}/api/hello`);
   const data = await resp.json();
 
