@@ -84,7 +84,7 @@ const mapChartData = (data: any, valueMaker: any = () => {}) => {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<any>
 ) {
   const jsonDirectory = path.join(process.cwd(), "src");
   const fileContents = await fs.readFile(
